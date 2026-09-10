@@ -5,6 +5,7 @@ import TechnologySection from "./component/TechnologySection";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Footer from "./component/Footer";
+import technologiesData from "./data/technologies.json";
 
 type Technology = {
   id: number;
@@ -21,28 +22,11 @@ function App() {
   const [technologies, setTechnologies] = useState<Technology[]>([]);
   const [selectedStack, setSelectedStack] = useState<Technology[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
+  const [error] = useState("");
 
   useEffect(() => {
-    const loadTechnologies = async () => {
-      try {
-        const response = await fetch("/src/data/technologies.json");
-
-        if (!response.ok) {
-          throw new Error("Failed to load technologies.");
-        }
-
-        const data: Technology[] = await response.json();
-
-        setTechnologies(data);
-      } catch {
-        setError("Unable to load technologies.");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    loadTechnologies();
+    setTechnologies(technologiesData as Technology[]);
+    setLoading(false);
   }, []);
 
   const handleAddToStack = (technology: Technology) => {
