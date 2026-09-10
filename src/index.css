@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+.gradient-primary {
+  background-image: linear-gradient(to right, #f97316, #ec4899, #7c3aed);
+}
+
+.gradient-text {
+  background-image: linear-gradient(to right, #f97316, #ec4899, #7c3aed);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
