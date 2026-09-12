@@ -1,4 +1,4 @@
-import bannerStack from "../assets/banner-stack.png";
+import hero from "../assets/hero.png";
 
 const Hero = () => {
   return (
@@ -38,7 +38,7 @@ const Hero = () => {
 
         <div className="flex items-center justify-center">
           <img
-            src={bannerStack}
+            src={hero}
             alt="DevStack development stack"
             className="h-auto w-full max-w-xl object-contain"
           />

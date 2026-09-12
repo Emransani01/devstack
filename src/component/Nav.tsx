@@ -1,4 +1,5 @@
 import { useState } from "react";
+import logoText from "../assets/logo-text.png";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -51,14 +52,9 @@ const Navbar = () => {
           )}
         </button>
 
-        <a
-          href="#home"
-          onClick={closeMenu}
-          className="text-xl font-bold tracking-tight sm:text-2xl lg:mr-auto"
-        >
-          <span className="gradient-text text-xl font-bold tracking-tight sm:text-2xl lg:mr-auto">
-            DevStack
-          </span>
+        {/* Logo */}
+        <a href="#home" onClick={closeMenu} className="lg:mr-auto">
+          <img src={logoText} alt="DevStack" className="h-9 w-auto" />
         </a>
 
         {/* Desktop Navigation */}
@@ -108,7 +104,10 @@ const Navbar = () => {
             Sign In
           </button>
 
-          <button className="gradient-primary rounded-full px-5 py-2.5 text-sm font-semibold text-white shadow-md transition duration-200 hover:-translate-y-0.5 hover:shadow-lg">
+          <button
+            type="button"
+            className="gradient-primary rounded-full px-5 py-2.5 text-sm font-semibold text-white shadow-md transition duration-200 hover:-translate-y-0.5 hover:shadow-lg"
+          >
             Sign Up
           </button>
         </div>
